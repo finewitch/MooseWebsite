@@ -975,7 +975,7 @@ footer {
     border: 1px solid #fa7a74;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 530px) {
   /* line 431, ../sass/styles.scss */
   .social-icons {
     width: 60%;
@@ -1024,7 +1024,7 @@ footer {
     margin-top: 40px;
   }
 }
-@media only screen and (max-width: 768px) and (max-width: 480px) {
+@media only screen and (max-width: 768px) and (max-width: 530px) {
   /* line 477, ../sass/styles.scss */
   .wrapper .tabs {
     max-width: 90%;
@@ -1046,13 +1046,13 @@ footer {
     flex-wrap: wrap;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 530px) {
   /* line 499, ../sass/styles.scss */
   .flex-table {
     margin-top: 0px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 530px) {
   /* line 506, ../sass/styles.scss */
   .flex-table > div {
     padding: 20px;
@@ -1083,7 +1083,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 530px) {
   /* line 539, ../sass/styles.scss */
   .flex-lattest-works h3 {
     font: 170% "Roboto Slab", serif;
@@ -1104,7 +1104,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 530px) {
   /* line 559, ../sass/styles.scss */
   .blog {
     margin-top: 50px;
@@ -1122,7 +1122,7 @@ footer {
     padding: 2%;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 530px) {
   /* line 576, ../sass/styles.scss */
   .footer-wrapper div {
     width: 90%;

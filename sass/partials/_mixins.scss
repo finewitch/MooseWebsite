@@ -1,0 +1,33 @@
+@mixin centered-display($display, $margin)
+{
+	display: $display;
+	margin : $margin;
+}
+
+@mixin table-style($display, $list-style, $margin, $padding) {
+  display: $display;
+  list-style: $list-style;
+  margin: $margin;
+  padding: $padding;
+}
+
+$break-xsmall: 480px;
+$break-small: 768px;
+$break-large: 1140px; //max-width-1140-desktop-widescreens
+$break-middle: 992px;
+
+
+@mixin respond-to($media) {
+	@if $media == xsphones {
+    @media only screen and (max-width: $break-xsmall) { @content; }
+  }
+  @if $media == phones {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+   @else if $media == middle-screens {
+    @media only screen and (max-width: $break-middle) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (max-width: $break-large) { @content; }
+  }
+}

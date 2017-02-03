@@ -1,97 +1,68 @@
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/normalize";
-/*info:
-HTML5, CSS, RWD, SASS,JAVASCRIPT,JQUERY
-
-*/
-
+//general
 *{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-                                                                    //general//
-body{
   font: 100% $main-font;
+}                                                                  //general//
+body{
   color: $gray;
 }
 ul{
   margin: 0;
   padding: 0;
 }
-.wrapper{
-  width:95%;
-  max-width:1170px;
-  @include centered-display(block, 0 auto);
-}
-header{
-  border-bottom :1px solid $light-gray;
-}
-.company-id{
-  width:100%;
-  @include centered-display(block, 0 auto);
-}
-.logo{
-  font: 200% $logo-font;
-  color: $gray; 
-  margin: 20px 0px 10px 0px;
-}
-.company-contact{
-  float: right;
-  list-style: none;
-  line-height: 40px;
-}
-.company-contact{ 
-  ul{
-    li{
-  display: inline;
-  font-size: 0.9em;
-  color: $gray;
-  margin-left:15px;
-    } 
-  }
-}
-.main-navigation{
-  width:1170px;
-  @include centered-display(block, 0 auto);
-}
-.menu-container{
-   width:65%;
- margin: auto;
-}
-.navbar{
- min-height: 51px;
- border-top: 1px solid $light-gray;
- background-color: $background-color;
-ul{
-  li{
-  float:left;
-  list-style: none;
-  text-transform: uppercase;
-  padding: 15px 27px 17px 20px;
-  color: $gray;
-  font-weight: bold;
-  }
-}
-}
 a{
   text-decoration: none;
   color: $gray;
 }
-.navbar
-  ul{
-    li{
-      a{
-  font: 90% $condensed-font;
+h2{
+  color:$darken-gray;
+  font: 200% $title-font;
   font-weight: bold;
-  transition: color 0.3s ease;
-  &:hover{
-       color: red; 
-        } 
+}
+//navbar
+.navbar{
+    min-height: 51px;
+    background-color: $background-color;
+    border-top: 1px solid $light-gray;
+    @include respond-to(wide-screens){
+      width: 1250px;
+      margin: 0 auto;
+        }
+    ul{
+      li{
+      float:left;
+      list-style: none;
+      text-transform: uppercase;
+      padding: 15px 27px 17px 20px;
+      color: $gray;
+      font-weight: bold;
+          a{
+          font: 90% $condensed-font;
+          font-weight: bold;
+          transition: color 0.3s ease;
+          &:hover{
+            color: $black; 
+                } 
+              }
+            }
+          }
       }
-    }
-  }
+.navbar::after{
+  position: absolute;
+  left:0;
+  display: block;
+  height: 51px;
+  content:' ';
+  width:100%;
+  border-top: 1px solid $light-gray;
+  background-color:$background-color;
+  z-index:-1;
+}
 .main-navigation{
   li {
     border-left: 1px solid $light-gray;
@@ -109,15 +80,47 @@ a{
   border: 1px solid $light-gray;
   border-radius: 50%;
   @include table-style(inline, none, 0 auto, 10px 13px); 
+      }
+    } 
+  }  
+.wrapper{
+  width:100%;
+  @include centered-display(block, 0 auto);
+  }
+header{
+  border-bottom :1px solid $light-gray;
+  }
+.company-id{
+  @include respond-to(wide-screens){
+    width:1250px; 
+    margin: 0 auto;
+    }
+  }
+ 
+.logo{
+  font: 200% $logo-font;
+  color: $gray; 
+  margin: 20px 0px 10px 0px;
+}
+.company-contact{
+  float: right;
+  list-style: none;
+  line-height: 40px;
+    ul{
+      li{
+    display: inline;
+    font-size: 0.9em;
+    color: $gray;
+    margin-left:15px;
+      } 
   }
 }
-}  
 #main-banner{ 
 position: relative;
-}
-#main-banner img{             /* SUPER IMAGE - HOW TO SET 100% WIDTH */
+    img{ 
   width: 100%;
   @include centered-display(block, 0 auto);
+    }
 }
 .text-over{
   position: absolute;
@@ -126,7 +129,7 @@ position: relative;
   text-align: center;
     p{
   padding:10px;
-}
+  }
 }
 p{
   span { 
@@ -138,7 +141,7 @@ p{
   padding: 10px; 
     }
   }
-                                                              //section-1//
+//section-1//
 .nav-header{
   display: none;
 }
@@ -146,7 +149,6 @@ p{
   color: $icon-color;
 }
 .tabs{
-  padding:50px 0px 50px 0px;
   text-align: center;
   font: 100% $condensed-font;
   @include centered-display(block, 0 auto);
@@ -171,97 +173,107 @@ p{
     }
 }
 .container{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.flex-table{
-  max-width:1000px;
+  display: block;
   margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom:40px;
-  justify-content: center; 
-  div{
-  padding:50px;
-  width:45%;  
+  width:90%;
+ }
+.flex-container{
+  @include respond-to(wide-screens){
+      display:flex;
+      width:1250px;
+      max-height:550px;
+      flex-direction: row;
+      margin:auto;
+      flex-wrap: wrap;
+  } 
+}
+.flex-container-slider{
+  margin-top:50px;
+  @include respond-to(wide-screens){
+  
+      display:flex;
+      width:1250px;
+      min-height:400px;
+      flex-direction: row;
+      
+  } 
+}
+.flex-cells{
+    @include respond-to(wide-screens){
+      flex: 0 0 50%;
+    }
+}
+.cellsrow{
+    @include respond-to(wide-screens){
+      display: flex;
+      flex-direction:row;
+      justify-content: center;
+      margin:auto;
+    }  
+}  
+
+.table-number{
+  @include respond-to(wide-screens){
+    padding:25px;
   }
-  p{
-  color: gray;
-  margin-left: 10%;
+  margin-top: 25px;
+  font: 350% $title-font;
+  font-weight:300;
+  color: $salmon; 
+  text-align: center;
+}
+.table-content{
+  padding:25px;
+  h4{
+    text-align: center;
+    text-transform: uppercase;
+    @include respond-to(wide-screens){
+      text-align:left;
+    }    
   }
   ul{
-    color: gray;
-  font-size: 0.9em;
-  margin-left: 10%;
-  list-style: circle;
-  color: #fa6c65;
-  }
-  span{
-    color:$gray;
-    font: 1.2em;
-  }
-  h3{
-  text-transform: uppercase;
-  font: 150% $condensed-font;
-  vertical-align:middle;
-      span{
-  font: 200% $title-font;
-  font-weight: 300;
-  color: $salmon;
-  padding:15px;
-  display: inline;
-  vertical-align:middle;
-      }
-  }
-}                                                                        //!
-.flex-table{
-  &> div{
-    &:first-child{
-  border-right: 1px solid $light-gray;
-  border-bottom: 1px solid $light-gray;
-    }
-    &:nth-child(2){
-  border-bottom: 1px solid $light-gray;
-    }
-    &:nth-child(3){
-  border-right: 1px solid $light-gray;
-    }
-  }
-}                                                                      //section-2//
-section.latest-works{
-  background-color: $background-color;
-  border-top: 1px solid $light-gray;
-  border-bottom: 1px solid $light-gray;
+    text-align: left;
+    list-style:none;
+    li::before {
+  content: "\02022";
+  margin-right:10px;
+  color: red; /* or whatever color you prefer */
 }
-.flex-lattest-works{
-  max-width:1170px;
+  }
+}
+.flex-container{
+  margin-bottom:50px;
+      @include respond-to(wide-screens){
+        &> div{
+        &:first-child{
+            border-right: 1px solid $light-gray;
+            border-bottom: 1px solid $light-gray;
+        }
+        &:nth-child(2){
+            border-bottom: 1px solid $light-gray;
+        }
+        &:nth-child(3){
+            border-right: 1px solid $light-gray;
+        }
+      } 
+ }
+}
+//section-latest-works
+#latest_works{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    @include respond-to(wide-screens){
+      width:60%;
+    }
+}
+.container img{
+  width:80%;
   margin: 0 auto;
-  margin-top: 40px;
-  padding-bottom:40px;
-  justify-content: center; 
-  &> div{
-    &:first-child{
-  display: flex;
-  width:60%;
-  justify-content: center;
-  align-content: middle;
-  }
-  &:last-child{
-  width:40%;
-  }
-  }
-  h3{
-    font: 200% $title-font;
-    font-weight:800;
-    color: $for-titles-gray;
-  }
 }
-.regular img { 
-  width: auto;
-  margin: 0 auto; /* it centers any block level element */
-} 
 button.see-more{
+  display: block;
+  margin: 0 auto;
   font: 100% $condensed-font;
   font-weight: 500;
   background-color: $salmon;
@@ -271,33 +283,28 @@ button.see-more{
   border-radius:6%;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
-  box-shadow: 1px 3px 1px $dark-salmon;
+  @include respond-to(wide-screens){
+    display:inline;
+  }
   &:hover{
     background-color: $dark-salmon;
   }
 }
-                                                                            //blog-part//
-#latest_works{
-  width:60%;
+.section-content{
+  margin-top:50px;
 }
-#blog{
-  width:90%;
-}                                                                       
+//blog-section                                                                       
 .blog {
-  margin-top: 50px;
+  color: $gray;
   h3{
-    font: 120% $condensed-font;
   text-align: center;
-  font-weight:800;
+  font-weight:600;
   color: $salmon;
-  margin-bottom:40px;
   text-transform: uppercase;
     }
   p{
   padding:20px;
   text-align: center;
-  color: $gray;
-  font: 100% $main-font;
   }
 }
 .blog-post{
@@ -316,54 +323,11 @@ button.see-more{
   display: flex;
   justify-content: center;
   margin-top:50px;
-}                                                                         //footer//
-footer{
-  background-color: $like-black;
-  margin-top:40px;
-}
-.footer-wrapper{
-  width:95%;
-  max-width:1170px;
-  padding: 0;
-  flex-wrap: nowrap;
-  justify-content: center;
-  @include centered-display(flex, 0 auto);
-    div{
-    color: $white;
-    padding:30px 30px 0px 30px;
-    }
-    h4{
-  font-family: "Roboto Condensed";
-  font-weight: 600;
-  text-transform: uppercase;
-  color: $footer-title;
-    }
-    p{
-  text-align: left;
-  color: $for-titles-gray;
-  font-size: 0.9em;
-    }
-    label{
-  font: 70% $title-font;
-  color: $for-titles-gray;
-  text-transform: uppercase;
-    }
-}
-.copyright{
-  width:100%;
-  padding: 0;
-  color: $gray;
-  background-color: $copy-background;
-  @include centered-display(block, auto);
-}
-.sign{
-  max-width:1170px;
-  margin: 0 auto;
-  padding:35px;
-  font-size:0.8em;                             
-}
-                                                /*MEDIA-QUERIES*/
-//nav bar and main image
+  p{
+    text-align: center;
+  }
+} 
+//navbar
 .navbar{
   ul{
     &> li{
@@ -375,12 +339,6 @@ footer{
         }
     }
   }
-.text-over{
-   @include respond-to(wide-screens){ 
-      left:10%;
-      top:150px;
-    }
-}
 /*menu-mobile*/
 .company-contact {
   @include respond-to(phones){ 
@@ -400,7 +358,7 @@ footer{
      &>li{
   float: none;
   text-align: center;
-  padding: 17px;
+  padding: 23px;
         & a{
           color: $white;
           font-weight: 100;
@@ -409,7 +367,9 @@ footer{
         } 
       }
   div {
-    display: block;  
+    display: block;
+    margin: 0 auto;
+    width:250px;  
     }
   }
 }
@@ -417,15 +377,15 @@ footer{
   @include respond-to(phones){
   margin: 0 auto;
   padding: 0;
-  background-color: #AF4B46;
+  background-color: $salmon;
   &>li {
-    border-bottom: 1px solid #FA7A74;
+    border-bottom: 1px solid $dark-salmon;
     border-left: none;
   }
   &>li:last-child {
   border-right: none;
-}
-}
+      }
+    }
 }
 .social-icons {
   @include respond-to(phones){
@@ -434,26 +394,20 @@ footer{
     padding: 20px;
     float: none;
     width: 50%;
-    &>ul{
-      &>li {
-    border: 1px solid #fa7a74;
-        }
-      }
-    }
   @include respond-to(xsphones){
    width: 60%;
   }
 }
+}
 #burger-menu{
   @include respond-to(phones){
-  width:100%;
-  height:50px;
+  height:40px;
+  margin-top:25px;
   background:url(../burger-menu.png) no-repeat 50% center;
   background-size: 35px 30px;
   cursor: pointer;
     }
   }
-
 .navbar{
   @include respond-to(phones){
     & ul{
@@ -463,10 +417,10 @@ footer{
     & ul.open{
     height: auto;
     width: auto;
+    margin-top:25px;
     }
   }
 }
-
 .wrapper{
   @include respond-to(phones){
   width:100%;
@@ -492,9 +446,7 @@ footer{
 .text-over{
   @include respond-to(phones){
   display: none;
-  }}
-
-                                                    //1st-section-how-it-works
+  }}       
 .flex-table{
   @include respond-to(phones){ 
   flex-wrap: wrap;
@@ -528,12 +480,7 @@ footer{
     border-bottom: 1px solid $gray;
       }
     }
-  }
-
-
-
-                                                    //2nd-section -latest-projects
-                                                  
+  }                                                 
 .flex-lattest-works{
  h3{
   @include respond-to(xsphones){
@@ -544,37 +491,69 @@ footer{
     @include respond-to(wide-screens){
       width:70%;
       text-align: center;
-    } //mq//
-  
+    }   
   }
 }
-.regular img {
-  @include respond-to(middle-screens){
-    width: 90%;
-  }
-}
-                                                  //3nd-section-blog
-
 .blog {
   @include respond-to(xsphones){ 
     margin-top: 50px;
   }
 }
-
-                                                    //footer
-
+//footer
+footer{
+  background-color: $like-black;
+  margin-top:40px;
+}
 .footer-wrapper{
+    h4{
+  font-family: "Roboto Condensed";
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $footer-title;
+    }
+    p{
+  text-align: left;
+  color: $for-titles-gray;
+    }
+    label{
+  font: 70% $title-font;
+  color: $for-titles-gray;
+  text-transform: uppercase;
+    }
+    @include respond-to(wide-screens){
+      width:95%;
+      max-width:1170px;
+      padding: 0;
+      flex-wrap: nowrap;
+      justify-content: center;
+      @include centered-display(flex, 0 auto);       
+    }  
+}
+.copyright{
+  width:100%;
+  padding: 0;
+  color: $gray;
+  background-color: $copy-background;
+  @include centered-display(block, auto);
+}
+.sign{
+  max-width:1170px;
+  margin: 0 auto;
+  padding:35px;                             
+}
+.footer-wrapper{
+  padding-top:10px;
   @include respond-to(wide-screens){
   flex-wrap: wrap;
   div{
   width:40%;
   padding: 2%;
-}
-}
+    }
+  }
  @include respond-to(xsphones){ 
   div{
   width:90%;
-}
+    }
   }
 }
 

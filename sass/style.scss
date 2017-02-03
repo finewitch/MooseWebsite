@@ -216,7 +216,6 @@ p{
   @include respond-to(wide-screens){
     padding:25px;
   }
-  margin-top: 25px;
   font: 350% $title-font;
   font-weight:300;
   color: $salmon; 
@@ -403,6 +402,7 @@ button.see-more{
   @include respond-to(phones){
   height:40px;
   margin-top:25px;
+  margin-bottom: 25px;
   background:url(../burger-menu.png) no-repeat 50% center;
   background-size: 35px 30px;
   cursor: pointer;
@@ -417,7 +417,6 @@ button.see-more{
     & ul.open{
     height: auto;
     width: auto;
-    margin-top:25px;
     }
   }
 }
@@ -492,6 +491,12 @@ button.see-more{
       width:70%;
       text-align: center;
     }   
+  }
+}
+#blog{
+  width: 90%;
+  @include respond-to(wide-screens){
+    width:100%;
   }
 }
 .blog {

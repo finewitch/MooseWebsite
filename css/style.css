@@ -542,7 +542,6 @@ p span {
     margin: auto; } }
 
 .table-number {
-  margin-top: 25px;
   font: 350% "Roboto Slab", serif;
   font-weight: 300;
   color: #fa6c65;
@@ -696,6 +695,7 @@ button.see-more {
   #burger-menu {
     height: 40px;
     margin-top: 25px;
+    margin-bottom: 25px;
     background: url(../burger-menu.png) no-repeat 50% center;
     background-size: 35px 30px;
     cursor: pointer; } }
@@ -706,8 +706,7 @@ button.see-more {
     overflow: hidden; }
   .navbar ul.open {
     height: auto;
-    width: auto;
-    margin-top: 25px; } }
+    width: auto; } }
 
 @media only screen and (max-width: 768px) {
   .wrapper {
@@ -763,6 +762,12 @@ button.see-more {
   .flex-lattest-works div:last-child {
     width: 70%;
     text-align: center; } }
+
+#blog {
+  width: 90%; }
+  @media only screen and (min-width: 1140px) {
+    #blog {
+      width: 100%; } }
 
 @media only screen and (max-width: 530px) {
   .blog {

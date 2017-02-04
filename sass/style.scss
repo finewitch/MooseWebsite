@@ -124,9 +124,12 @@ position: relative;
 }
 .text-over{
   position: absolute;
-  top:250px;
-  left:25%;
   text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
     p{
   padding:10px;
   }
@@ -164,14 +167,16 @@ p{
       color: $salmon;
       @include table-style(inline, none, 0 auto, 10px); 
     }
-}
-.tabs{
-  &>li.desc{
+    &>li.desc{
       font: 110% $title-font;
       font-weight: 100;
       margin-left:10px;
     }
+    @include respond-to(wide-screens){
+      margin: 100px 0px 100px 0px;
+    }
 }
+
 .container{
   display: block;
   margin: 0 auto;
@@ -181,7 +186,7 @@ p{
   @include respond-to(wide-screens){
       display:flex;
       width:1250px;
-      max-height:550px;
+      max-height:500px;
       flex-direction: row;
       margin:auto;
       flex-wrap: wrap;
@@ -190,12 +195,10 @@ p{
 .flex-container-slider{
   margin-top:50px;
   @include respond-to(wide-screens){
-  
       display:flex;
       width:1250px;
-      min-height:400px;
-      flex-direction: row;
-      
+      max-height:500px;
+      flex-direction: row; 
   } 
 }
 .flex-cells{
@@ -226,6 +229,8 @@ p{
   h4{
     text-align: center;
     text-transform: uppercase;
+    font-size:1.2em;
+    font-weight: bold;
     @include respond-to(wide-screens){
       text-align:left;
     }    
@@ -258,6 +263,9 @@ p{
  }
 }
 //section-latest-works
+.latest-works{
+  background-color: $background-color
+}
 #latest_works{
     width: 90%;
     display: block;
@@ -294,6 +302,9 @@ button.see-more{
 }
 //blog-section                                                                       
 .blog {
+  @include respond-to(wide-screens){
+    margin-top:200px;
+  }
   color: $gray;
   h3{
   text-align: center;
@@ -527,7 +538,7 @@ footer{
     }
     @include respond-to(wide-screens){
       width:95%;
-      max-width:1170px;
+      width:1250px;
       padding: 0;
       flex-wrap: nowrap;
       justify-content: center;
@@ -551,7 +562,7 @@ footer{
   @include respond-to(wide-screens){
   flex-wrap: wrap;
   div{
-  width:40%;
+  width:25%;
   padding: 2%;
     }
   }

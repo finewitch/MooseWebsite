@@ -395,7 +395,7 @@ h2 {
       font-weight: bold;
       transition: color 0.3s ease; }
       .navbar ul li a:hover {
-        color: #000000; }
+        color: #C85650; }
 
 .navbar::after {
   position: absolute;
